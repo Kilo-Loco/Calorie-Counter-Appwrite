@@ -17,6 +17,7 @@
 		7C3172902B82DF2A0098C3F6 /* FoodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31728F2B82DF2A0098C3F6 /* FoodRow.swift */; };
 		7C3172922B82E1350098C3F6 /* DateStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3172912B82E1350098C3F6 /* DateStepper.swift */; };
 		7C3172942B82E19A0098C3F6 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3172932B82E19A0098C3F6 /* Food.swift */; };
+		7C3172962B82F0C70098C3F6 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3172952B82F0C70098C3F6 /* LinearGradient+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7C31728F2B82DF2A0098C3F6 /* FoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRow.swift; sourceTree = "<group>"; };
 		7C3172912B82E1350098C3F6 /* DateStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStepper.swift; sourceTree = "<group>"; };
 		7C3172932B82E19A0098C3F6 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		7C3172952B82F0C70098C3F6 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				7C31728F2B82DF2A0098C3F6 /* FoodRow.swift */,
 				7C3172912B82E1350098C3F6 /* DateStepper.swift */,
 				7C3172932B82E19A0098C3F6 /* Food.swift */,
+				7C3172952B82F0C70098C3F6 /* LinearGradient+Extensions.swift */,
 				7C31727D2B7E31FF0098C3F6 /* Assets.xcassets */,
 				7C31727F2B7E31FF0098C3F6 /* Preview Content */,
 			);
@@ -160,6 +163,7 @@
 				7C31727A2B7E31FB0098C3F6 /* Calorie_Counter_SwiftUIApp.swift in Sources */,
 				7C3172922B82E1350098C3F6 /* DateStepper.swift in Sources */,
 				7C3172882B7E37D40098C3F6 /* ProgressRing.swift in Sources */,
+				7C3172962B82F0C70098C3F6 /* LinearGradient+Extensions.swift in Sources */,
 				7C3172942B82E19A0098C3F6 /* Food.swift in Sources */,
 				7C3172902B82DF2A0098C3F6 /* FoodRow.swift in Sources */,
 				7C31728E2B7E44FC0098C3F6 /* StatsOverviewHeader.swift in Sources */,

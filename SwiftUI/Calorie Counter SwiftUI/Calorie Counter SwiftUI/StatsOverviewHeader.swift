@@ -17,8 +17,8 @@ struct StatsOverviewHeader: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing)
-            .edgesIgnoringSafeArea(.all)
+            LinearGradient.calorieCounter
+                .edgesIgnoringSafeArea(.all)
             
             HStack(spacing: 30) {
                 ProgressStatView(title: "EATEN", value: 320, fontSize: 24)

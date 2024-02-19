@@ -11,7 +11,7 @@ struct DashboardView: View {
     
     @State var isExpanded: Bool = false
     
-    @State var listOption: ListOption = .available
+    @State var listOption: ListOption = .food
     
     @State var date: Date = .now
     
@@ -19,7 +19,7 @@ struct DashboardView: View {
         var foods: [Food] = []
         
         for i in  0..<20 {
-            foods.append(Food(id: String(i), name: "Chicken", calorieCount: 320 + i))
+            foods.append(Food(id: "chicken" + String(i), name: "Chicken", calorieCount: 320 + i))
         }
         return foods
     }()
@@ -27,7 +27,7 @@ struct DashboardView: View {
         var foods: [Food] = []
         
         for i in  0..<2 {
-            foods.append(Food(id: String(i), name: "Burger", calorieCount: 560 + i))
+            foods.append(Food(id: "burger" + String(i), name: "Burger", calorieCount: 560 + i))
         }
         return foods
     }()
@@ -46,34 +46,59 @@ struct DashboardView: View {
                 .padding(.horizontal)
             
             Picker("", selection: $listOption) {
-                Text("Available")
-                    .tag(ListOption.available)
+                Text("Food")
+                    .tag(ListOption.food)
                 
-                Text("History")
-                    .tag(ListOption.history)
+                Text("Exercise")
+                    .tag(ListOption.exercise)
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
             
             switch listOption {
-            case .available:
+            case .food:
                 LazyVStack(content: {
-                    ForEach(availableFoods) { food in
-                        FoodRow(
-                            food: food,
-                            config: .addItem({ self.foodHistory.append($0) })
-                        )
+                    Section(isExpanded: $isExpanded) {
+                        ForEach(foodHistory) { food in
+                            FoodRow(
+                                food: food,
+                                config: .removeItem { item in self.foodHistory.removeAll(where: { $0.id == item.id }) }
+                            )
+                        }
+                    } header: {
+                        HStack {
+                            Text("History")
+                                .font(.headline)
+                            Spacer()
+                            Button(
+                                "",
+                                systemImage: isExpanded ? "chevron.down" : "chevron.right",
+                                action: { isExpanded.toggle() }
+                            )
+                        }
+                    }
+
+
+                    
+                    Section {
+                        ForEach(availableFoods) { food in
+                            FoodRow(
+                                food: food,
+                                config: .addItem({ self.foodHistory.append($0) })
+                            )
+                        }
+                    } header: {
+                        HStack {
+                            Text("Available")
+                                .font(.headline)
+                            Spacer()
+                        }
                     }
                 })
                 .padding(.horizontal)
-            case .history:
+            case .exercise:
                 LazyVStack(content: {
-                    ForEach(foodHistory) { food in
-                        FoodRow(
-                            food: food,
-                            config: .removeItem({ print($0.id) })
-                        )
-                    }
+                    
                 })
                 .padding(.horizontal)
             }
@@ -85,7 +110,7 @@ struct DashboardView: View {
 
 extension DashboardView {
     enum ListOption: Int {
-        case available, history
+        case food, exercise
     }
 }
 

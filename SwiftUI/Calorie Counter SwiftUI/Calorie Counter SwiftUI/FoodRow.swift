@@ -27,9 +27,12 @@ struct FoodRow: View {
                 Button(
                     action: {config.action(food) },
                     label: {
-                        Image(systemName: config.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                        LinearGradient.calorieCounter
+                            .mask(
+                                Image(systemName: config.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            )
                             .frame(width: 44)
                     }
                 )
